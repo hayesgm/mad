@@ -1,12 +1,13 @@
 #!/usr/bin/env coffee
 
-http = require "http"
+express = require "express"
 
-http.createServer (request, response) ->
+app = express.createServer()
 
-  response.writeHead 302, "Location":"https://github.com/flesch/coffeescript-on-heroku"
-  response.end "\n"
+app.use express.static(__dirname + '/public')
 
-  return
-
-.listen process.env.PORT or 5000
+app.get '/', (req, res) ->
+	res.render 'home.ejs'
+	return
+	
+app.listen process.env.PORT or 5000

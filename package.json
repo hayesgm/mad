@@ -7,7 +7,9 @@
   "engines": { "node":"0.4 || 0.5", "npm":"1" },
   "main": "application.coffee",
   "dependencies": {
-    "coffee-script": "*"
+    "coffee-script": "*",
+	"express": "*",
+	"ejs": "*"
   },
   "repositories": [
     { "type":"git", "url":"git://github.com/flesch/coffeescript-on-heroku.git" }
